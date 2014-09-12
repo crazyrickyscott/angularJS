@@ -1,0 +1,32 @@
+.container
+  .panel.panel-warning
+    .panel-heading
+      h2 Phone
+    .panel-body
+      .col-md-2
+        h3
+          | Serach:
+        input.form-control ng-model="query"
+        h3
+          | Sort by:
+        select.form-control ng-model="orderProp"
+          option value="name"
+            | Alphabetical
+          option value="age"
+           | Newest
+      .col-md-10
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th Phone Name
+              th Phone Snippet
+          tbody
+            tr ng-repeat="phone in phones | filter:query | orderBy:orderProp"
+              td
+                | {{phone.name}}
+              td
+                | {{phone.snippet}}
+      | {{phones | json}}
+    .panel-footer
+      | @ricky
+      = link_to 'phones', phones_path, class: 'btn btn-info'

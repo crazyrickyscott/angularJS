@@ -1,0 +1,25 @@
+h1 Listing phones
+
+table
+  thead
+    tr
+      th Name
+      th Snippet
+      th Age
+      th
+      th
+      th
+
+  tbody
+    - @phones.each do |phone|
+      tr
+        td = phone.name
+        td = phone.snippet
+        td = phone.age
+        td = link_to 'Show', phone
+        td = link_to 'Edit', edit_phone_path(phone)
+        td = link_to 'Destroy', phone, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Phone', new_phone_path
