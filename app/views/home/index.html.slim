@@ -18,15 +18,22 @@
         table.table.table-striped.table-bordered.table-hover
           thead
             tr
+              th
               th Phone Name
               th Phone Snippet
           tbody
             tr ng-repeat="phone in phones | filter:query | orderBy:orderProp"
               td
-                | {{phone.name}}
+                a href="#/phones/{{phone.id}}" class="thumb"
+                  img ng-src="{{phone.imageUrl}}" width="100px" hight="100px"
+              td
+                a href="#/phones/{{phone.id}}"
+                  | {{phone.name}}
               td
                 | {{phone.snippet}}
-      | {{phones | json}}
+
     .panel-footer
       | @ricky
       = link_to 'phones', phones_path, class: 'btn btn-info'
+<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            <a href="#/phones/{{phone.id}}">{{phone.name}}</a>

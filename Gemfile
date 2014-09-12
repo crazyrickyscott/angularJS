@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'carrierwave'
 gem 'slim'
 gem 'slim-rails'
 gem 'bootstrap-sass'

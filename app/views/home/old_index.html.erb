@@ -8,6 +8,7 @@
         <li ng-repeat="phone in phones | filter:query" ng-repeat="(key, value) in dataset">
           {{phone.name}}
           <p>{{phone.snippet}}</p>
+          {{phones | json}}
         </li>
       </ul>
     </div>
